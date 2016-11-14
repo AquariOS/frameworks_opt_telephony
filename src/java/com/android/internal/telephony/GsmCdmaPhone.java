@@ -730,6 +730,9 @@ public class GsmCdmaPhone extends Phone {
 
     @Override
     public String getIccSerialNumber() {
+        if (mCdmaSubscriptionSource == CDMA_SUBSCRIPTION_NV) {
+            return DUMMY_NV_ICC_SERIAL;
+        }
         IccRecords r = mIccRecords.get();
         if (!isPhoneTypeGsm() && r == null) {
             if (mCdmaSubscriptionSource == CDMA_SUBSCRIPTION_NV) {
@@ -743,6 +746,9 @@ public class GsmCdmaPhone extends Phone {
 
     @Override
     public String getFullIccSerialNumber() {
+        if (mCdmaSubscriptionSource == CDMA_SUBSCRIPTION_NV) {
+            return DUMMY_NV_ICC_SERIAL;
+        }
         IccRecords r = mIccRecords.get();
         if (!isPhoneTypeGsm() && r == null) {
             if (mCdmaSubscriptionSource == CDMA_SUBSCRIPTION_NV) {
