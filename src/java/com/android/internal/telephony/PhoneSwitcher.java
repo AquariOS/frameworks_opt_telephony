@@ -635,12 +635,13 @@ public class PhoneSwitcher extends Handler {
         return false;
     }
 
-    private boolean isInEmergencyCallbackMode() {
+    protected boolean isEmergency() {
+        if (isInEmergencyCallbackMode()) return true;
         for (Phone p : mPhones) {
             if (p == null) continue;
-            if (p.isInEcm()) return true;
+            if (p.isInEmergencyCall()) return true;
             Phone imsPhone = p.getImsPhone();
-            if (imsPhone != null && imsPhone.isInEcm()) {
+            if (imsPhone != null && imsPhone.isInEmergencyCall()) {
                 return true;
             }
         }
