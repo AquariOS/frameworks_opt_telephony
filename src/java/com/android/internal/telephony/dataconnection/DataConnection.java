@@ -320,12 +320,12 @@ public class DataConnection extends StateMachine {
     static final int EVENT_NR_STATE_CHANGED = BASE + 27;
     static final int EVENT_DATA_CONNECTION_METEREDNESS_CHANGED = BASE + 28;
     static final int EVENT_NR_FREQUENCY_CHANGED = BASE + 29;
-    private static final int CMD_TO_STRING_COUNT = EVENT_NR_FREQUENCY_CHANGED - BASE + 1;
+ //   private static final int CMD_TO_STRING_COUNT = EVENT_NR_FREQUENCY_CHANGED - BASE + 1;
 
     protected static final int EVENT_RETRY_CONNECTION = BASE + 30;
 
     private static final int CMD_TO_STRING_COUNT =
-            EVENT_RETRY_CONNECTION - BASE + 2;
+            EVENT_RETRY_CONNECTION - BASE + 1;
 
     private static String[] sCmdToString = new String[CMD_TO_STRING_COUNT];
     static {
